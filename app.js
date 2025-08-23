@@ -4,7 +4,7 @@ const path = require('path'); //imported path module to handle file paths
 const bodyParser = require('body-parser'); // module to handle form submissions
 
 const app = express(); //an app istance of the express module
-const PORT = 3003;
+const PORT = 3000;
 
 // -----In-Memory storage setup
 let posts = [
@@ -24,8 +24,11 @@ app.set('views', path.join(__dirname, 'views'));
 //--ROUTES--
 
 //the views folder has an index.ejs for homepage, it will list all posts
-app.get('/', (req, res)=>{
-    res.render('index', {posts});    //we will render the index ejs file
+app.get('/', (req, res) => {
+    // Makes a copy of posts and sort them by ID in descending order (newest first)
+    const sortedPosts = [...posts].sort((a, b) => b.id - a.id);
+    const success = req.query.success; // homepages gets any success message from the query string
+    res.render('index', { posts: sortedPosts, success });    //we will render the index ejs file, and success message
 });
 
 //route to display the form for creating posts
@@ -59,18 +62,27 @@ app.get('/edit/:id', (req, res) => {
 
 //route to handle edited form submission
 app.post('/edit/:id', (req, res) => {
+  const { title, content } = req.body;
   const post = posts.find(p => p.id === parseInt(req.params.id));
-  post.title = req.body.title;
-  post.content = req.body.content;
+  if (!post) return res.status(404).send('Post not found'); //checks if post exists, sends 404 error if not
+  //to ensure title and content are not empty
+  if (!title || !content) {
+    return res.render('edit', { post, error: 'Title and content cannot be empty.' });
+  }
+  post.title = title;
+  post.content = content;
   res.redirect('/post/' + post.id);
 });
 
 //route to delete post
 app.post('/delete/:id', (req, res) => {
   const index = posts.findIndex(p => p.id === parseInt(req.params.id));
-  posts.splice(index, 1);
-  res.redirect('/');
+  //check if no post was found, stops execution and sends a 404
+  if (index === -1) return res.status(404).send('Post not found');
+  posts.splice(index, 1); // removes element
+  res.redirect('/?success=Post+successfully+deleted'); //query string declared in the '/' route for success
 });
+
 
 
 
