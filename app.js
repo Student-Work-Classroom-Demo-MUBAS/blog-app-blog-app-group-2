@@ -1,8 +1,8 @@
 //We are importing libraries using require method
 const express = require('express');
 const path = require('path'); //imported path module to handle file paths
-//an app istance of the express module
-const app = express();
+const bodyParser = require('body-parser'); // module to handle form submissions
+const app = express(); //an app istance of the express module
 const PORT = 3000;
 // -----In-Memory storage setup
 let posts = [
@@ -14,9 +14,11 @@ let posts = [
 app.set('view engine', 'ejs');
 //initializing the code to serve static files contained in folder public
 app.use(express.static(path.join(__dirname, public)));
+//initinalizing middleware for bodyparser to handle complex forms
+app.use(bodyParser.urlencoded({extended:true}));
+
+
 //the views folder has an index.ejs for homepage, it will list all posts
-
-
 app.get('/', (req, res)=>{
     res.render('index', {posts});    //we will render the index ejs file
 });
