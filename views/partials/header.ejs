@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog App</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
 </head>
 <body>
-    <nav class="navbar">
-        <a class="navbar-brand" href="/">Blog App</a>
-        <a class="nav-link" href="/posts">Posts</a>
-        <a class="nav-link" href="/posts/new">New Post</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="/">My Blog</a>
+        <a class="nav-link text-light" href="/create">New Post</a>
+        <!-- when clicked, /create willtake user to post creation form -->
+    </div>
     </nav>
     <div class="container">
+    <!-- we are wrappinh main content in bootstrap container -->
 
     
