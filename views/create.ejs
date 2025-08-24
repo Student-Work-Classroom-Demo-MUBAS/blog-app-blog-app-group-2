@@ -1,6 +1,12 @@
 <%- include('partials/header') %>
 
 <h1>Create New Post</h1>
+
+<!-- in a case the user forgets to enter a title/content, we want to show an error message -->
+<% if(error) { %>
+  <div class="alert alert-danger"><%= error %></div>
+<% } %>
+
 <!-- creating a create pos form -->
 <form action="/create" method="POST">
   <input type="text" name="title" placeholder="Post title">
