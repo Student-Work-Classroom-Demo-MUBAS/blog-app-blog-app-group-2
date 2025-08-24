@@ -16,6 +16,9 @@
         <p class="card-text"><%= post.content.length > 150 ? post.content.substring(0,150)+'...' : post.content %></p>
         <a href="/post/<%= post.id %>" class="btn btn-primary">Read More</a>
         <a href="/edit/<%= post.id %>" class="btn btn-secondary ml-2">Edit</a>
+        <form action="/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Delete this post?');">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
       </div>
     </div>
   <% }) %>
