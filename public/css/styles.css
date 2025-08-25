@@ -21,7 +21,9 @@
 .edit-buttons{
     margin-top: 20px;
     margin-bottom: 20px;
-}/*Make page take full height*/
+}
+
+/*Make page take full height*/
 html, body {
   height: 100%;
   margin: 0;
@@ -84,7 +86,7 @@ footer {
 
 /* General Footer Styling */
 .footer {
-  background-color: #456882;
+  background-color: #1B3C53;
   color: #b0b0b1;
   font-family: Arial, sans-serif;
   padding: 40px 20px 10px 20px;
@@ -118,4 +120,47 @@ footer {
   line-height: 1.4;
   text-align: left;
   width: 350px;
+}
+
+
+/*-------Default Light Mode-------*/
+/*Targets body element only at class light mode*/
+body.light-mode {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/*Targets navbar at light mode only*/
+body.light-mode .custom-navbar {
+  background-color: #ffffff;
+}
+
+/*Targets navigation links and brand text logo in light mode*/
+body.light-mode .nav-link,
+body.light-mode .navbar-brand {
+  color: #212529;
+}
+
+/*-------Dark Mode-------*/
+/*Applied when body has class dark mode*/
+body.dark-mode {
+  background-color: #121212;
+  color: #f8f9fa;
+}
+
+/*Sets navbar background slightly lighter than pure black in contrast yo dark mode*/
+body.dark-mode .custom-navbar {
+  background-color: #1c1c1c;
+}
+
+/*Makes navbar links and brand text light colored to stand out in dark navbar*/
+body.dark-mode .nav-link,
+body.dark-mode .navbar-brand {
+  color: #f8f9fa;
+}
+
+/* Optional button styling */
+/*Targets dark or light mode toggle buttons*/
+#modeToggle {
+  transition: all 0.3s;
 }
