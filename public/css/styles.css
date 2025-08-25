@@ -30,3 +30,7 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+.form-label{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
