@@ -2,18 +2,18 @@
     text-align: center;
     padding: 40px;
     font-weight: bold;
-    color: #022949;
+    color: #1B3C53;
 }
 
 /* -------------------NAV BAR -------------------- */
 
 .custom-navbar {
-  background-color: #022949;
+  background-color: #1B3C53;
 }
 
 .custom-navbar .nav-link,
 .custom-navbar .navbar-brand {
-  color: #ffffff; /* Make sure text is readable */
+  color: #d2c1b6; /* Make sure text is readable */
 }
 
 /* -------------------------------------------------- */
@@ -86,7 +86,7 @@ footer {
 
 /* General Footer Styling */
 .footer {
-  background-color: #1B3C53;
+  background-color: #456882;
   color: #b0b0b1;
   font-family: Arial, sans-serif;
   padding: 40px 20px 10px 20px;
@@ -126,19 +126,19 @@ footer {
 /*-------Default Light Mode-------*/
 /*Targets body element only at class light mode*/
 body.light-mode {
-  background-color: #f8f9fa;
-  color: #212529;
+  background-color: white;
+  color: #1B3C53;
 }
 
 /*Targets navbar at light mode only*/
 body.light-mode .custom-navbar {
-  background-color: #ffffff;
+  background-color: #d2c1b6;
 }
 
 /*Targets navigation links and brand text logo in light mode*/
 body.light-mode .nav-link,
 body.light-mode .navbar-brand {
-  color: #212529;
+  color: white;
 }
 
 /*-------Dark Mode-------*/
@@ -148,7 +148,7 @@ body.dark-mode {
   color: #f8f9fa;
 }
 
-/*Sets navbar background slightly lighter than pure black in contrast yo dark mode*/
+/*Sets navbar background slightly lighter than pure black in contrast to dark mode*/
 body.dark-mode .custom-navbar {
   background-color: #1c1c1c;
 }
