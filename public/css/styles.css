@@ -132,7 +132,7 @@ body.light-mode {
 
 /*Targets navbar at light mode only*/
 body.light-mode .custom-navbar {
-  background-color: #ffffff;
+  background-color: #1B3C53;
 }
 
 /*Targets navigation links and brand text logo in light mode*/
