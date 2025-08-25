@@ -1,5 +1,6 @@
 <!-- Pulling inthe header.ejs file not repeat the html,head and navbar on every page-->
 <%- include('partials/header') %>
+<h1 class = "welcome"> Welcome to Our Machine Learning Insights Blog</h1>
 
 <!-- Checking if server passed a success message if yes show in green Bootstrap alert box -->
 <% if (success) { %>
@@ -13,21 +14,24 @@
 <% if (posts.length === 0) { %>
   <div class="alert alert-info">No posts yet. <a href="/create">Create your first post</a>!</div>
 <% } else { %>
-  <% posts.forEach(post => { %>
-    <div class="card mb-3">
-      <div class="card-body">
-        <h2 class="card-title"><%= post.title %></h2>
-        <p class="card-text"><%= post.content.length > 150 ? post.content.substring(0,150)+'...' : post.content %></p>
-        <a href="/post/<%= post.id %>" class="btn btn-primary">Read More</a>
-        <a href="/edit/<%= post.id %>" class="btn btn-secondary ml-2">Edit</a>
-        
-        <!-- Forms delete button which sends a POST request to /delete/:id and includes confirmation popup before submiting-->
-        <form action="/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Delete this post?');">
-            <button type="submit" class="btn btn-danger">Delete</button>
+  <div class="row">
+  <% posts.forEach(function(post) { %>
+    <div class="col-md-6 mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title"><%= post.title %></h2>
+          <p class="card-text"><%= post.content.length > 150 ? post.content.substring(0,150)+'...' : post.content %></p>
+          <a href="/post/<%= post.id %>" class="btn btn-primary btn-sm">Read More</a>
+          <a href="/edit/<%= post.id %>" class="btn btn-secondary btn-sm ml-2">Edit</a>
+          <form action="/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Delete this post?');" class="d-inline">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
           </form>
+        </div>
       </div>
     </div>
   <% }) %>
+</div>
+
 <% } %>
 
 <!-- Pulling in the footer.ejs file, has closing tags, Bootstrap JS, and etc-->
