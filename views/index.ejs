@@ -8,7 +8,7 @@
 <% } %>
 
 <!-- Big page title titled all posts-->
-<h1 class="mb-4">All Posts</h1>
+<h1 class="mb-4" style="text-align: center;">All Posts</h1>
 
 <!-- Checking if there are not posts and showing blue alert infor if none and looping through the posts and displaying them if available -->
 <% if (posts.length === 0) { %>
@@ -19,10 +19,10 @@
     <div class="col-md-6 mb-3">
       <div class="card h-100">
         <div class="card-body">
-          <h2 class="card-title"><%= post.title %></h2>
+          <h3 class="card-title"><%= post.title %></h3>
           <p class="card-text"><%= post.content.length > 150 ? post.content.substring(0,150)+'...' : post.content %></p>
-          <a href="/post/<%= post.id %>" class="btn btn-primary btn-sm">Read More</a>
-          <a href="/edit/<%= post.id %>" class="btn btn-secondary btn-sm ml-2">Edit</a>
+          <a href="/post/<%= post.id %>" class="btn btn-primary btn-sm"><i class="fa fa-eye-slash"></i> Read More</a>
+          <a href="/edit/<%= post.id %>" class="btn btn-secondary btn-sm ml-2"><i class="fa fa-edit"></i> Edit</a>
           <form action="/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Delete this post?');" class="d-inline">
             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
           </form>
