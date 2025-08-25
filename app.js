@@ -8,7 +8,8 @@ const PORT = 3000;
 
 // -----In-Memory storage setup
 let posts = [
-    {id:1, title: "Welcome to Our Blog", content: 'First Post'},
+    {id:1, title: "Feature Selection 🚀", content: 'Feature selection is the process of identifying and choosing the most important input variables that contribute to the prediction or classification task in a machine learning model. Since real-world datasets often contain irrelevant, redundant, or noisy features, selecting the right ones not only improves model accuracy but also reduces complexity, training time, and the risk of overfitting. Common techniques include filter methods (like correlation tests), wrapper methods (such as recursive feature elimination), and embedded methods (like feature importance from decision trees). By focusing on the most meaningful features, we ensure that machine learning models are both efficient and reliable, ultimately leading to better insights and smarter decisions.'},
+    {id:2, title: "Data Preprocessing", content: 'Data preprocessing is a crucial first step in any machine learning project, as raw data is often messy, incomplete, and inconsistent. Before feeding data into algorithms, it must be cleaned, transformed, and prepared so that models can learn effectively. This process includes handling missing values, removing duplicates, encoding categorical variables, scaling numerical features, and even reducing dimensionality for efficiency. By ensuring that the dataset is accurate and well-structured, preprocessing improves both the performance and reliability of machine learning models. In short, good data preprocessing sets the foundation for building intelligent systems that produce meaningful and trustworthy results.'},
 ];
 
 //--MIDDLEWARE-- 
