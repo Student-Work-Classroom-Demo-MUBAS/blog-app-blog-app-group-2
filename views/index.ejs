@@ -1,6 +1,8 @@
 <!-- Pulling inthe header.ejs file not repeat the html,head and navbar on every page-->
 <%- include('partials/header') %>
 <h1 class = "welcome"> Welcome to Our Machine Learning Insights Blog</h1>
+<img src ='https://cdn.pixabay.com/photo/2024/01/29/22/47/ai-generated-8540915_1280.jpg' 
+alt="Blog Banner" style="width: 100%; height:300px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
 
 <!-- Checking if server passed a success message if yes show in green Bootstrap alert box -->
 <% if (success) { %>
@@ -8,7 +10,7 @@
 <% } %>
 
 <!-- Big page title titled all posts-->
-<h1 class="mb-4" style="text-align: center;">All Posts</h1>
+<h1 class="mb-4" style="text-align: center; color: #022949;">All Posts</h1>
 
 <!-- Checking if there are not posts and showing blue alert infor if none and looping through the posts and displaying them if available -->
 <% if (posts.length === 0) { %>

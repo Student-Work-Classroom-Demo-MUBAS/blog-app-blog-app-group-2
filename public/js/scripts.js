@@ -22,3 +22,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+
+//script to move back up wehn clicked
+// Get the button
+let topButton = document.getElementById("topBtn");
+
+// Show button after scrolling down 100px
+window.onscroll = function() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    topButton.style.display = "block";
+  } else {
+    topButton.style.display = "none";
+  }
+};
+
+// Smooth scroll to top when clicked
+topButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
