@@ -10,6 +10,19 @@ body {
   flex-direction: column;
 }
 
+/* Button styling*/
+/*Adding shadow for depth using box shadow and making them slightly round using border radius*/
+.btn {
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.1s ease-in-out;
+}
+
+/*Adding hover effect to button*/
+.btn:hover {
+  transform: scale(1.03); /* Subtle zoom on hover */
+}
+
 /* Container to push footer at the bottom */
 .container {
   flex: 1; 
