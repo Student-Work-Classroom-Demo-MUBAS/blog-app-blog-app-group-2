@@ -28,9 +28,55 @@ footer {
   background-color: white;
   color: #343a40;
   text-align: center;
-  padding: 1rem;
+  padding: 40px;
+  width: 86%;
+  align-items: center;
+  margin-left: 7%;
+  margin-bottom: 20px;margin-top: 50px;
+  border-radius: 6px;
 }
 .form-label{
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+
+/* -------------------------------- */
+
+/* General Footer Styling */
+.footer {
+  background-color: #022949; /* Dark blue background */
+  color: #b0b0b1;
+  font-family: Arial, sans-serif;
+  padding: 40px 20px 10px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+}
+
+.footer-section h3, 
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.footer-section p {
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: left;
+  width: 350px;
 }
