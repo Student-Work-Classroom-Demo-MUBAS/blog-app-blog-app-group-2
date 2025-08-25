@@ -1,11 +1,15 @@
+<!-- Pulling inthe header.ejs file not repeat the html,head and navbar on every page-->
 <%- include('partials/header') %>
 
+<!-- Checking if server passed a success message if yes show in green Bootstrap alert box -->
 <% if (success) { %>
   <div class="alert alert-success"><%= success.replace(/\+/g, ' ') %></div>
 <% } %>
 
+<!-- Big page title titled all posts-->
 <h1 class="mb-4">All Posts</h1>
 
+<!-- Checking if there are not posts and showing blue alert infor if none and looping through the posts and displaying them if available -->
 <% if (posts.length === 0) { %>
   <div class="alert alert-info">No posts yet. <a href="/create">Create your first post</a>!</div>
 <% } else { %>
@@ -16,6 +20,8 @@
         <p class="card-text"><%= post.content.length > 150 ? post.content.substring(0,150)+'...' : post.content %></p>
         <a href="/post/<%= post.id %>" class="btn btn-primary">Read More</a>
         <a href="/edit/<%= post.id %>" class="btn btn-secondary ml-2">Edit</a>
+        
+        <!-- Forms delete button which sends a POST request to /delete/:id and includes confirmation popup before submiting-->
         <form action="/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Delete this post?');">
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
@@ -24,4 +30,5 @@
   <% }) %>
 <% } %>
 
+<!-- Pulling in the footer.ejs file, has closing tags, Bootstrap JS, and etc-->
 <%- include('partials/footer') %>
