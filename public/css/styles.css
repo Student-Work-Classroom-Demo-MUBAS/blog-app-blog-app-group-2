@@ -150,7 +150,7 @@ body.dark-mode {
 
 /*Sets navbar background slightly lighter than pure black in contrast to dark mode*/
 body.dark-mode .custom-navbar {
-  background-color: #1c1c1c;
+  background-color: #1B3C53;
 }
 
 /*Makes navbar links and brand text light colored to stand out in dark navbar*/
